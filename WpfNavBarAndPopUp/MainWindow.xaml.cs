@@ -24,5 +24,40 @@ namespace WpfNavBarAndPopUp
         {
             InitializeComponent();
         }
+
+        private void BtnPopUpLogOut_OnClick(object sender, RoutedEventArgs e)
+        {
+           Application.Current.Shutdown();
+        }
+
+        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnMaximize_OnClick(object sender, RoutedEventArgs e)
+        {
+
+            WindowState = WindowState == WindowState.Maximized ? WindowState.Normal:WindowState.Maximized;
+
+        }
+
+        private void BtnMinimize_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void BtnCloseMenu_OnClick(object sender, RoutedEventArgs e)
+        {
+            BtnCloseMenu.Visibility = Visibility.Collapsed;
+            BtnOpenMenu.Visibility = Visibility.Visible;
+        }
+
+        private void BtnOpenMenu_OnClick(object sender, RoutedEventArgs e)
+        {
+            BtnCloseMenu.Visibility = Visibility.Visible;
+            BtnOpenMenu.Visibility = Visibility.Collapsed;
+
+        }
     }
 }
